@@ -14,7 +14,7 @@ def scraper(url: str):
 
         driver = webdriver.Chrome(
             service=Service(
-                ChromeDriverManager(driver_version="125.0.6422.77").install()
+                ChromeDriverManager(driver_version="125.0.6422.112").install()
             ),
             options=options,
         )
