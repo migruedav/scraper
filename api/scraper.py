@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import time
 
 
 def scraper(url: str):
@@ -20,7 +21,9 @@ def scraper(url: str):
         )
 
         driver.get(url)
+        time.sleep(5)
         content = driver.page_source
+        driver.quit()
 
         return content
     except Exception as e:
