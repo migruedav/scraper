@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
-def scraper(url: str):
+def scraper(url: str, wait:int=5):
     try:
         options = Options()
         options.add_argument("--headless")
@@ -21,7 +21,7 @@ def scraper(url: str):
         )
 
         driver.get(url)
-        time.sleep(5)
+        time.sleep(wait)
         content = driver.page_source
         driver.quit()
 
