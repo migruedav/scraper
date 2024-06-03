@@ -21,5 +21,5 @@ async def read_root():
 
 
 @app.get("/scraper")
-async def read_root(url: str):
-    return {"data": scraper(url)}
+async def read_root(url: str, wait:int):
+    return {"data": scraper(url,wait)}
